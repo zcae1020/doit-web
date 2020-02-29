@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>starcraft</title>
+    <link rel="stylesheet" href="tic-tac-toe.css">
+</head>
+<body>
+    <img id="cloaking" src="cloaking.png" alt="cloaking">
+    <h6></h6>
+    <img id="wraith" src="wraith.png" alt="wraith">
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#cloaking").click(function(){
+                $("#wraith").fadeToggle("slow");
+            });
+        });
+    </script>
+
+    <div>
+    <table id="gameBoard">
+        <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+    <div id="gameResult">
+    </div>
+
+    <script src="tic-tac-toe.js"></script>
+
+    <!-- <div class="board x" id="board">
+        <div class="cell x" data-cell></div>
+        <div class="cell circle" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+    </div>
+    <div class="winning-message">
+        <div data-winning-message-text></div>
+        <button id="restartButton">Restart</button>
+    </div> -->
+
+</body>
+</html>
