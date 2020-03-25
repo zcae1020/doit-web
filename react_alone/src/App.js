@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ToDoList from './toDoList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  componentDidMount(){
+    const name = document.querySelector(".name");
+    const nameInput = name.querySelector("input");
+    const greeting = document.querySelector(".greeting");
+
+    name.addEventListener("submit", greet);
+
+    function greet(e){
+      e.preventDefault();
+      const value = nameInput.value;
+      hello(value);
+    }
+
+    function hello(value){
+      name.style.display ="none";
+      greeting.style.display="block"
+      greeting.innerHTML="hello "+value;
+
+    }
+  }
+  render(){
+    return (
+      <div>
+        <form className="name">
+          <input type="text" placeholder="what is your name?"></input>
+        </form>
+        <span className="greeting"></span>
+        <br></br>
+        <ToDoList />
+      </div>
+    );
+  }
 }
 
 export default App;
